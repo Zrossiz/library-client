@@ -2,7 +2,7 @@ import { withLayout } from "@/layout/Layout";
 import React, { useState } from "react";
 import axios from "axios";
 import { API } from "@/helpers/api";
-import { IBook, IFile } from "@/interfaces/book.interface";
+import { IBook } from "@/interfaces/book.interface";
 import { useRouter } from "next/router";
 
 interface BookProps extends Record<string, unknown> {
