@@ -32,7 +32,7 @@ const Book = ({ book }: BookProps) => {
 
   const router = useRouter();
   const { id } = router.query;
-  let selectedFile;
+  let selectedFile: HTMLInputElement;
 
   const getSelectedFile = (e) => {
     selectedFile = e.target.files[0];
@@ -56,7 +56,7 @@ const Book = ({ book }: BookProps) => {
 
     let formData = new FormData();
     formData.append("fileBook", selectedFile);
-    /*
+
     await axios.put(`${API.mainPage.getBooks}/${id}`, {
       title: filteredData[0],
       description: filteredData[1],
@@ -65,7 +65,7 @@ const Book = ({ book }: BookProps) => {
       fileCover: filteredData[4],
       fileName: filteredData[5],
       fileBook: filteredData[6],
-    });*/
+    });
 
     await axios.put(`${API.mainPage.getBooks}/${id}`, formData, {
       headers: {
