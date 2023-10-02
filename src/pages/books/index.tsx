@@ -9,7 +9,7 @@ interface HomeProps extends Record<string, unknown> {
   books: IBook[];
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const { data: books } = await axios.get<HomeProps>(API.mainPage.getBooks);
 
   if (!books) {

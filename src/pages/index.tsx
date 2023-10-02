@@ -6,6 +6,8 @@ function Home() {
     <>
       <h1>Главная</h1>
       <Link href="/books">Книги</Link>
+      <br />
+      <Link href="/books/create">Создать книгу</Link>
     </>
   );
 }

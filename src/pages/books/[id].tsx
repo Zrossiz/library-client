@@ -37,12 +37,10 @@ const Book = ({ book }: BookProps) => {
   const getSelectedFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
     selectedFile = e.target.files[0];
-    console.log(selectedFile);
   };
 
   const removeBook = async () => {
     await axios.delete(`${API.mainPage.getBooks}/${id}`);
-    console.log(true);
   };
 
   const updateBook = async (
@@ -60,15 +58,18 @@ const Book = ({ book }: BookProps) => {
     let formData = new FormData();
     formData.append("fileBook", selectedFile);
 
-    await axios.put(`${API.mainPage.getBooks}/${id}`, {
-      title: filteredData[0],
-      description: filteredData[1],
-      authors: filteredData[2],
-      favorite: filteredData[3],
-      fileCover: filteredData[4],
-      fileName: filteredData[5],
-      fileBook: filteredData[6],
-    });
+    await axios
+      .put(`${API.mainPage.getBooks}/${id}`, {
+        title: filteredData[0],
+        description: filteredData[1],
+        authors: filteredData[2],
+        favorite: filteredData[3],
+        fileCover: filteredData[4],
+        fileName: filteredData[5],
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     await axios.put(`${API.mainPage.getBooks}/${id}`, formData, {
       headers: {
