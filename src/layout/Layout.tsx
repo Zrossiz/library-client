@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 
-import { Noto_Sans } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Head from "next/head";
 
 import { Header } from "./Header/Header";
@@ -10,7 +10,7 @@ import { LayoutProps } from "./Layout.props";
 import styles from "./Layout.module.css";
 import cn from "classnames";
 
-const inter = Noto_Sans({
+const inter = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
 });

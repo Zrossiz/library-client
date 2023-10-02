@@ -1,0 +1,53 @@
+.header {
+    border-radius: 30px;
+    border: 1px solid #000;
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(6.5px);
+    width: 80%;
+    padding: 0 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.headerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: inline-block;
+    padding: 6px 0;
+}
+
+.navWrapper {
+    display: flex;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    font-size: 18px;
+}
+
+.navItem:last-child {
+    display: flex;
+}
+
+.navItem svg {
+    margin-top: 2px;
+    margin-left: 6px;
+}
+
+.navItem:not(:first-child) {
+    margin-left: 20px;
+}
+
+.button {
+    color: #000;
+    font-size: 20px;
+    padding: 20px 40px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
