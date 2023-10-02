@@ -41,12 +41,12 @@ const Book = ({ book }: BookProps) => {
 
   const removeBook = async () => {
     await axios.delete(`${API.mainPage.getBooks}/${id}`);
+    console.log(true);
   };
 
   const updateBook = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    e.preventDefault();
     let filteredData = updatedDataBook.filter((property, index) => {
       if (property) {
         return true;
