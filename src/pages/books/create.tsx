@@ -2,10 +2,6 @@ import { API } from "@/helpers/api";
 import { withLayout } from "@/layout/Layout";
 import React from "react";
 
-const preventDefault = (e) => {
-  e.preventDefault();
-};
-
 const Create = () => {
   return (
     <div>

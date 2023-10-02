@@ -10,3 +10,9 @@ export interface IBook {
   updatedAt: string;
   __v: number;
 }
+
+export interface IFile {
+  document_title: string;
+  file: File | null;
+  document_language: number;
+}

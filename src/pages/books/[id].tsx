@@ -2,7 +2,7 @@ import { withLayout } from "@/layout/Layout";
 import React, { useState } from "react";
 import axios from "axios";
 import { API } from "@/helpers/api";
-import { IBook } from "@/interfaces/book.interface";
+import { IBook, IFile } from "@/interfaces/book.interface";
 import { useRouter } from "next/router";
 
 interface BookProps extends Record<string, unknown> {
@@ -32,9 +32,10 @@ const Book = ({ book }: BookProps) => {
 
   const router = useRouter();
   const { id } = router.query;
-  let selectedFile: HTMLInputElement;
+  let selectedFile: Blob;
 
-  const getSelectedFile = (e) => {
+  const getSelectedFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) return;
     selectedFile = e.target.files[0];
     console.log(selectedFile);
   };
@@ -44,7 +45,9 @@ const Book = ({ book }: BookProps) => {
     console.log(true);
   };
 
-  const updateBook = async (e) => {
+  const updateBook = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     let filteredData = updatedDataBook.filter((property, index) => {
       if (property) {
@@ -146,8 +149,8 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
-  const id = params.id;
+export const getStaticProps = async (context: { params: { id: any } }) => {
+  const id = context.params.id;
   const { data: book } = await axios.get<IBook>(
     `${API.mainPage.getBooks}/${id}`
   );
