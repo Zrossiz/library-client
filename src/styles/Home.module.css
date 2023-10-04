@@ -1,0 +1,39 @@
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 90%;
+    background-image: url('https://live.staticflickr.com/4493/37480266160_e3b15813be_h.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.firstScreen {
+    height: 87vh;
+}
+
+.secondScreen {
+    height: 100vh;
+}
+
+.titleH1 {
+    margin-top: 13%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.arrowDown {
+    display: flex;
+    justify-content: center;
+}
+
+.about {
+    transition: 0.4s;
+}
+
+.about:hover {
+    transform: translateY(10%);
+}

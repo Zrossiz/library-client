@@ -9,18 +9,6 @@ interface HomeProps extends Record<string, unknown> {
   books: IBook[];
 }
 
-export const getServerSideProps = async () => {
-  const { data: books } = await axios.get<HomeProps>(API.mainPage.getBooks);
-
-  if (!books) {
-    return;
-  }
-
-  return {
-    props: { books },
-  };
-};
-
 const Books = ({ books }: HomeProps) => {
   return (
     <ul>
@@ -31,6 +19,19 @@ const Books = ({ books }: HomeProps) => {
       ))}
     </ul>
   );
+};
+
+export const getStaticProps = async () => {
+  const { data: books } = await axios.get<HomeProps>(API.mainPage.getBooks);
+
+  if (!books) {
+    return;
+  }
+
+  return {
+    props: { books },
+    revalidate: 30,
+  };
 };
 
 export default withLayout(Books);

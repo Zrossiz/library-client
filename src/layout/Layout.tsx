@@ -23,10 +23,8 @@ const Layout = ({ children }: LayoutProps) => {
       </Head>
       <div className={cn(styles.wrapper, inter.className)}>
         <Header />
-        <main className={styles.main}>
-          <div>{children}</div>
-        </main>
-        <Footer />
+        <main className={styles.main}>{children}</main>
+        {/* <Footer /> */}
       </div>
     </>
   );

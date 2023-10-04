@@ -3,7 +3,7 @@
     border: 1px solid #000;
     background: rgba(255, 255, 255, 0.30);
     backdrop-filter: blur(6.5px);
-    width: 80%;
+    width: 100%;
     padding: 0 20px;
     margin: 0 auto;
     margin-top: 20px;
@@ -30,24 +30,12 @@
     font-size: 18px;
 }
 
-.navItem:last-child {
-    display: flex;
-}
-
 .navItem svg {
-    margin-top: 2px;
-    margin-left: 6px;
+    position: relative;
+    transform: translateY(15%);
+    margin-left: 2px;
 }
 
 .navItem:not(:first-child) {
     margin-left: 20px;
-}
-
-.button {
-    color: #000;
-    font-size: 20px;
-    padding: 20px 40px;
-    border-radius: 20px;
-    letter-spacing: 1px;
-    cursor: pointer;
 }

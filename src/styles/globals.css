@@ -1,36 +1,44 @@
+:root {
+    --black: #000;
+    --white: #fff;
+    --select: #884d00;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f7efef;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--select);
+    border-radius: 5px;
+}
+
 body {
-    background-color: black;
+    background-color: #1d120a;
     font-family: 'Montserrat', sans-serif;
-    color: white;
+    color: var(--white);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
-a {
-    color: #fff;
-    text-decoration: none;
+h1 {
+    margin: 0;
 }
 
-button {
-    transition: 0.6s;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
+* {
+    box-sizing: border-box;
 }
 
-button:hover {
-    color: #fff;
-    background-color: #000;
-    transform: scale(1.1);
-}
-
-.main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('https://live.staticflickr.com/4493/37480266160_e3b15813be_h.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
+*::selection {
+    background: var(--select)
 }

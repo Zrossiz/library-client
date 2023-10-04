@@ -44,9 +44,7 @@ const Book = ({ book }: BookProps) => {
     console.log(true);
   };
 
-  const updateBook = async (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const updateBook = async () => {
     let filteredData = updatedDataBook.filter((property, index) => {
       if (property) {
         return true;
@@ -129,7 +127,7 @@ const Book = ({ book }: BookProps) => {
               name="fileBook"
               onChange={(e) => getSelectedFile(e)}
             />
-            <button onClick={(e) => updateBook(e)}>Сохранить</button>
+            <button onClick={() => updateBook()}>Сохранить</button>
           </form>
         </div>
       )}
@@ -157,6 +155,7 @@ export const getStaticProps = async (context: { params: { id: any } }) => {
   );
   return {
     props: { book },
+    revalidate: 30,
   };
 };
 
