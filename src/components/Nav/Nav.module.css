@@ -1,0 +1,15 @@
+.nav ul {
+    list-style: none;
+    display: flex;
+    font-size: 18px;
+}
+
+.navItem svg {
+    position: relative;
+    transform: translateY(15%);
+    margin-left: 2px;
+}
+
+.navItem:not(:first-child) {
+    margin-left: 20px;
+}

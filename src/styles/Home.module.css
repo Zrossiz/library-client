@@ -12,7 +12,7 @@
 }
 
 .firstScreen {
-    height: 87vh;
+    height: 72vh;
 }
 
 .secondScreen {
@@ -36,4 +36,11 @@
 
 .about:hover {
     transform: translateY(10%);
+}
+
+.techonologyWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 11%;
 }

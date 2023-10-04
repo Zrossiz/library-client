@@ -6,5 +6,7 @@ export interface LinkProps
     HTMLLinkElement
   > {
   children: ReactNode;
+  border: boolean;
+  targetBlank?: boolean;
   href: string;
 }
