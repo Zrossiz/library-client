@@ -24,7 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
       <div className={cn(styles.wrapper, inter.className)}>
         <Header />
         <main className={styles.main}>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );
