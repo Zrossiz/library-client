@@ -11,6 +11,16 @@ export interface IBook {
   __v: number;
 }
 
+export interface IBookForm {
+  title: string;
+  description: string;
+  authors: string;
+  favorite: string;
+  fileCover: string;
+  fileName: string;
+  fileBook: any;
+}
+
 export interface IFile {
   document_title: string;
   file: File | null;

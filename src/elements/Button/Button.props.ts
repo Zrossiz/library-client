@@ -5,5 +5,7 @@ export interface ButtonProps
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
+  type?: "submit" | "reset";
+  disable?: boolean;
   children: ReactNode;
 }

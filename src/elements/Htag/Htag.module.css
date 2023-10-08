@@ -4,3 +4,10 @@
     display: inline-block;
     font-size: 50px;
 }
+
+.h2 {
+    color: var(--white);
+    font-weight: bold;
+    display: inline-block;
+    font-size: 30px;
+}
