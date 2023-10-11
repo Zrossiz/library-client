@@ -15,7 +15,7 @@ export const Input = forwardRef(
         id={id}
         name={name}
         type={type}
-        className={cn(styles.input)}
+        className={cn(styles.input, className)}
         {...props}
       />
     );

@@ -12,12 +12,12 @@ export const Nav = () => {
           </LinkItem>
         </li>
         <li className={styles.navItem}>
-          <LinkItem border={true} href="books/create">
+          <LinkItem border={true} href="/books/create">
             Загрузить книгу
           </LinkItem>
         </li>
         <li className={styles.navItem}>
-          <LinkItem border={true} href="#">
+          <LinkItem border={true} href="/books/search">
             Поиск
             <svg
               width="30"

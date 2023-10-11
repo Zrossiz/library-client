@@ -11,3 +11,7 @@
     display: inline-block;
     font-size: 30px;
 }
+
+.black {
+    color: var(--black)
+}

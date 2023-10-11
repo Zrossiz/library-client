@@ -6,8 +6,10 @@ export interface IBook {
   favorite: string;
   fileCover: string;
   fileName: string;
+  viewCount: number;
   createdAt: string;
   updatedAt: string;
+
   __v: number;
 }
 

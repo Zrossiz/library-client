@@ -54,3 +54,14 @@ h1 {
 h2 {
     margin: 0;
 }
+
+.hidden {
+    height: 0px !important;
+    width: 0px !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.pointer {
+    cursor: pointer;
+}

@@ -3,6 +3,8 @@
     border-radius: 16px;
     transition: 0.6s;
     width: 400px;
+    background-color: var(--white);
+    display: inline-block;
 }
 
 .input:hover {

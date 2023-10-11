@@ -9,6 +9,7 @@ import { Footer } from "./Footer/Footer";
 import { LayoutProps } from "./Layout.props";
 import styles from "./Layout.module.css";
 import cn from "classnames";
+import { ToTop } from "@/components";
 
 const inter = Montserrat({
   subsets: ["latin"],
@@ -23,7 +24,10 @@ const Layout = ({ children }: LayoutProps) => {
       </Head>
       <div className={cn(styles.wrapper, inter.className)}>
         <Header />
-        <main className={styles.main}>{children}</main>
+        <main className={styles.main}>
+          {children}
+          <ToTop />
+        </main>
         <Footer />
       </div>
     </>
