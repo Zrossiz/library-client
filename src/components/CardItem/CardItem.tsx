@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./CardItem.module.css";
 import { Htag } from "@/elements";
 import Link from "next/link";
-import cn from "classnames";
 import { CardItemProps } from "@/components/CardItem/CardItem.props";
 
 export const CardItem = ({ id, title, imgUrl }: CardItemProps) => {

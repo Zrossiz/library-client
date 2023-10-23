@@ -14,9 +14,10 @@ interface HomeProps extends Record<string, unknown> {
 const Books = ({ books }: HomeProps) => {
   return (
     <ul className={styles.listItems}>
-      {books.map((item, index) => (
-        <CardItem key={item._id} id={Number(item._id)} title={item.title} />
-      ))}
+      {books.map((item, index) => {
+        console.log(item._id);
+        return <CardItem key={item._id} id={item._id} title={item.title} />;
+      })}
     </ul>
   );
 };

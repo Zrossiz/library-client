@@ -1,5 +1,5 @@
 export interface CardItemProps {
-  id: number;
+  id: string;
   title: string;
   imgUrl?: string;
 }
