@@ -4,6 +4,8 @@ import Link from "next/link";
 import React from "react";
 import axios from "axios";
 import { API } from "@/helpers/api";
+import { CardItem } from "@/components";
+import styles from "../../styles/BooksIndex.module.css";
 
 interface HomeProps extends Record<string, unknown> {
   books: IBook[];
@@ -11,11 +13,9 @@ interface HomeProps extends Record<string, unknown> {
 
 const Books = ({ books }: HomeProps) => {
   return (
-    <ul>
+    <ul className={styles.listItems}>
       {books.map((item, index) => (
-        <li key={index}>
-          <Link href={`/books/${item._id}`}>{item.title}</Link>
-        </li>
+        <CardItem key={item._id} id={Number(item._id)} title={item.title} />
       ))}
     </ul>
   );

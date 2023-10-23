@@ -142,6 +142,7 @@ function Home() {
             </svg>
           </Technology>
         </div>
+        <div className={styles.descriptionWrapper}></div>
       </section>
     </>
   );

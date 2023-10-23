@@ -18,6 +18,7 @@ const Book = ({ book }: BookProps) => {
 
   const removeBook = async () => {
     await axios.delete(`${API.mainPage.getBooks}/${id}`);
+    router.push("/books");
     console.log(true);
   };
 
