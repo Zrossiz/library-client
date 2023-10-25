@@ -92,7 +92,7 @@ const Book = ({ book }: BookProps) => {
               <Htag tag="h3">Просмотров:</Htag> <div>{book.viewCount}</div>
             </li>
             <a
-              href={`http://localhost:3001/api/books/${id}/download`}
+              href={`${process.env.NEXT_PUBLIC_DOMAIN}/api/books/${id}/download`}
               download
               className={styles.descItemWrapper}
             >
