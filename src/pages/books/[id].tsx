@@ -5,6 +5,8 @@ import { API } from "@/helpers/api";
 import { IBook } from "@/interfaces/book.interface";
 import { Form } from "@/components";
 import { useRouter } from "next/router";
+import { Htag, Span } from "@/elements";
+import styles from "../../styles/BookId.module.css";
 
 interface BookProps extends Record<string, unknown> {
   book: IBook;
@@ -22,20 +24,94 @@ const Book = ({ book }: BookProps) => {
     console.log(true);
   };
 
+  const downloadBook = async () => {
+    await axios.get(`${API.mainPage.getBooks}/${id}/download`).then(() => {
+      console.log(true);
+    });
+  };
+
   return (
-    <>
-      <ul>
-        <li>{book.title}</li>
-        <li>{book.viewCount}</li>
-      </ul>
-      <div onClick={() => removeBook()}>Удалить</div>
-      <div onClick={() => setOpen(!open)}>Обновить</div>
+    <div className={styles.bookPageWrapper}>
+      <div className={styles.mainWrapper}>
+        <div className={styles.imgWrapper}>
+          {book.fileCover != "undefined" ? (
+            <img src={book.fileCover} alt="" />
+          ) : (
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 11.5V7L15.5 2H5C4.44771 2 4 2.44771 4 3V21C4 21.5523 4.44771 22 5 22H11"
+                stroke="#333333"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14.5 15L20.5 21"
+                stroke="#333333"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M20.5 15L14.5 21"
+                stroke="#333333"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M15 2V7H20"
+                stroke="#333333"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          )}
+        </div>
+        <div className={styles.descWrapper}>
+          <Htag tag="h2">{book.title}</Htag>
+          <ul>
+            <li className={styles.descItemWrapper}>
+              <Htag tag="h3">Авторы книги:</Htag> <div>{book.authors}</div>
+            </li>
+            <li className={styles.descItemWrapper}>
+              <Htag tag="h3">В избранных:</Htag>{" "}
+              <div>{book.favorite ? "да" : "нет"}</div>
+            </li>
+            <li className={styles.descItemWrapper}>
+              <Htag tag="h3">Рейтинг:</Htag> <div>4</div>
+            </li>
+            <li className={styles.descItemWrapper}>
+              <Htag tag="h3">Просмотров:</Htag> <div>{book.viewCount}</div>
+            </li>
+            <a
+              href={`http://localhost:3001/api/books/${id}/download`}
+              download
+              className={styles.descItemWrapper}
+            >
+              <Htag tag="h3">Скачать книгу</Htag>
+            </a>
+            <li className={styles.descItemWrapper}>
+              <Span>{book.description}</Span>
+            </li>
+          </ul>
+          <div onClick={() => removeBook()}>Удалить</div>
+          <div onClick={() => setOpen(!open)}>Обновить</div>
+        </div>
+      </div>
       {open && (
         <div>
           <Form action="update" />
         </div>
       )}
-    </>
+    </div>
   );
 };
 

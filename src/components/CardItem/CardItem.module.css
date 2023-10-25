@@ -1,12 +1,13 @@
 .itemWrapper {
     background-color: var(--white);
     padding: 10px;
-    margin-right: 20px;
-    margin-top: 20px;
     display: inline-block;
     border-radius: 16px;
     width: 300px;
     transition: 0.6s;
+    height: fit-content;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
 .itemWrapper:hover {
@@ -21,6 +22,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+.imgPreview {
+    transition: 1s;
+}
+
+.imgPreview:hover {
+    transform: scale(1.1);
 }
 
 .titleWrapper {

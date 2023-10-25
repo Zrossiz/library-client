@@ -6,6 +6,7 @@ import axios from "axios";
 import { API } from "@/helpers/api";
 import { CardItem } from "@/components";
 import styles from "../../styles/BooksIndex.module.css";
+import cn from "classnames";
 
 interface HomeProps extends Record<string, unknown> {
   books: IBook[];
@@ -13,12 +14,20 @@ interface HomeProps extends Record<string, unknown> {
 
 const Books = ({ books }: HomeProps) => {
   return (
-    <ul className={styles.listItems}>
-      {books.map((item, index) => {
-        console.log(item._id);
-        return <CardItem key={item._id} id={item._id} title={item.title} />;
-      })}
-    </ul>
+    <>
+      <ul className={styles.listWrapper}>
+        {books.map((item, index) => {
+          return (
+            <CardItem
+              key={item._id}
+              id={item._id}
+              title={item.title}
+              fileCover={item.fileCover}
+            />
+          );
+        })}
+      </ul>
+    </>
   );
 };
 

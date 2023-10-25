@@ -44,3 +44,9 @@
     flex-wrap: wrap;
     margin-top: 11%;
 }
+
+.descriptionWrapper {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}

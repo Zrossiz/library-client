@@ -1,5 +1,3 @@
-.listItems {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.listWrapper {
+    columns: auto 18em;
 }

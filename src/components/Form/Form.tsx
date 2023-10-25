@@ -62,6 +62,7 @@ export const Form = ({ action }: FormProps) => {
     });
 
     let formData = new FormData();
+
     formData.append("title", filteredData[0]);
     formData.append("description", filteredData[1]);
     formData.append("authors", filteredData[2]);

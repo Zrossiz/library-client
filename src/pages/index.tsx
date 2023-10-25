@@ -1,4 +1,4 @@
-import { Htag } from "@/elements";
+import { Htag, Span } from "@/elements";
 import { Technology } from "@/components";
 import { withLayout } from "@/layout/Layout";
 import styles from "../styles/Home.module.css";
@@ -142,7 +142,13 @@ function Home() {
             </svg>
           </Technology>
         </div>
-        <div className={styles.descriptionWrapper}></div>
+        <div className={styles.descriptionWrapper}>
+          <Span align="center">
+            Это учебный проект, в котором я пробую свои силы и изучаю новые
+            технологии <br /> Это не единственный мой пет проект в релизе,
+            подробнее можно узнать лично
+          </Span>
+        </div>
       </section>
     </>
   );

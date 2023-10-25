@@ -1,0 +1,23 @@
+.bookPageWrapper {
+    margin-top: 40px;
+}
+
+.mainWrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.descWrapper {
+    width: 40%;
+}
+
+.descItemWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.descItemWrapper div {
+    font-size: 18px;
+    margin-left: 20px;
+}
