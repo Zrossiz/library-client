@@ -2,5 +2,5 @@ import { IBook } from "@/interfaces/book.interface";
 
 export interface BookItemDescProps {
   book: IBook;
-  id: number;
+  id: string | string[] | undefined;
 }

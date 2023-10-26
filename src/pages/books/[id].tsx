@@ -5,7 +5,7 @@ import { API } from "@/helpers/api";
 import { IBook } from "@/interfaces/book.interface";
 import { BookItemDesc, Form, UpdateBookPopUp } from "@/components";
 import { useRouter } from "next/router";
-import { Htag, Span, Button } from "@/elements";
+import { Button } from "@/elements";
 import styles from "../../styles/BookId.module.css";
 
 interface BookProps extends Record<string, unknown> {
@@ -76,7 +76,7 @@ const Book = ({ book }: BookProps) => {
           )}
         </div>
         <div className={styles.descWrapper}>
-          <BookItemDesc id={Number(id)} book={book} />
+          <BookItemDesc id={id} book={book} />
           <div className={styles.buttonsWrapper}>
             <Button onClick={() => removeBook()}>Удалить</Button>
             <Button onClick={() => setOpen(!open)}>Обновить</Button>
