@@ -8,16 +8,13 @@
 }
 
 .descWrapper {
-    width: 40%;
-}
-
-.descItemWrapper {
     display: flex;
-    align-items: center;
-    margin-top: 16px;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
 }
 
-.descItemWrapper div {
-    font-size: 18px;
-    margin-left: 20px;
+.buttonsWrapper {
+    display: flex;
+    justify-content: space-between;
 }

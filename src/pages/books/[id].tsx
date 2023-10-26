@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { API } from "@/helpers/api";
 import { IBook } from "@/interfaces/book.interface";
-import { Form } from "@/components";
+import { BookItemDesc, Form, UpdateBookPopUp } from "@/components";
 import { useRouter } from "next/router";
-import { Htag, Span } from "@/elements";
+import { Htag, Span, Button } from "@/elements";
 import styles from "../../styles/BookId.module.css";
 
 interface BookProps extends Record<string, unknown> {
@@ -13,7 +13,7 @@ interface BookProps extends Record<string, unknown> {
 }
 
 const Book = ({ book }: BookProps) => {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(true);
 
   const router = useRouter();
   const { id } = router.query;
@@ -76,40 +76,18 @@ const Book = ({ book }: BookProps) => {
           )}
         </div>
         <div className={styles.descWrapper}>
-          <Htag tag="h2">{book.title}</Htag>
-          <ul>
-            <li className={styles.descItemWrapper}>
-              <Htag tag="h3">Авторы книги:</Htag> <div>{book.authors}</div>
-            </li>
-            <li className={styles.descItemWrapper}>
-              <Htag tag="h3">В избранных:</Htag>{" "}
-              <div>{book.favorite ? "да" : "нет"}</div>
-            </li>
-            <li className={styles.descItemWrapper}>
-              <Htag tag="h3">Рейтинг:</Htag> <div>4</div>
-            </li>
-            <li className={styles.descItemWrapper}>
-              <Htag tag="h3">Просмотров:</Htag> <div>{book.viewCount}</div>
-            </li>
-            <a
-              href={`${process.env.NEXT_PUBLIC_DOMAIN}/api/books/${id}/download`}
-              download
-              className={styles.descItemWrapper}
-            >
-              <Htag tag="h3">Скачать книгу</Htag>
-            </a>
-            <li className={styles.descItemWrapper}>
-              <Span>{book.description}</Span>
-            </li>
-          </ul>
-          <div onClick={() => removeBook()}>Удалить</div>
-          <div onClick={() => setOpen(!open)}>Обновить</div>
+          <BookItemDesc id={Number(id)} book={book} />
+          <div className={styles.buttonsWrapper}>
+            <Button onClick={() => removeBook()}>Удалить</Button>
+            <Button onClick={() => setOpen(!open)}>Обновить</Button>
+          </div>
         </div>
       </div>
       {open && (
-        <div>
-          <Form action="update" />
-        </div>
+        <UpdateBookPopUp setOpen={setOpen} />
+        // <div>
+        //   <Form action="update" />
+        // </div>
       )}
     </div>
   );

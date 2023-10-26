@@ -1,0 +1,17 @@
+
+.descItemWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    width: fit-content;
+}
+
+.descItemWrapper div {
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.downloadTitle {
+    margin-right: 20px;
+    color: var(--white);
+}

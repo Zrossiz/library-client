@@ -8,7 +8,7 @@ import axios from "axios";
 import { API } from "@/helpers/api";
 import { FormProps } from "./Form.props";
 
-export const Form = ({ action }: FormProps) => {
+export const Form = ({ action, titleColor }: FormProps) => {
   const { register } = useForm<IBookForm>();
 
   const [title, setTitle] = useState<string>("");
@@ -84,10 +84,15 @@ export const Form = ({ action }: FormProps) => {
 
   return (
     <form encType="multipart/form-data">
-      <div>
+      <div className={styles.formWrapper}>
         <div className={styles.inputWrapper}>
           <label htmlFor="title">
-            <Htag tag="h2">Заголовок</Htag>
+            <Htag
+              color={titleColor === "black" ? titleColor : "white"}
+              tag="h2"
+            >
+              Заголовок
+            </Htag>
           </label>
           <div className={styles.input}>
             <Input
@@ -103,7 +108,12 @@ export const Form = ({ action }: FormProps) => {
         </div>
         <div className={styles.inputWrapper}>
           <label htmlFor="description">
-            <Htag tag="h2">Описание</Htag>
+            <Htag
+              color={titleColor === "black" ? titleColor : "white"}
+              tag="h2"
+            >
+              Описание
+            </Htag>
           </label>
           <div className={styles.input}>
             <Input
@@ -119,7 +129,12 @@ export const Form = ({ action }: FormProps) => {
         </div>
         <div className={styles.inputWrapper}>
           <label htmlFor="authors">
-            <Htag tag="h2">Авторы</Htag>
+            <Htag
+              color={titleColor === "black" ? titleColor : "white"}
+              tag="h2"
+            >
+              Авторы
+            </Htag>
           </label>
           <div className={styles.input}>
             <Input
@@ -135,7 +150,12 @@ export const Form = ({ action }: FormProps) => {
         </div>
         <div className={styles.inputWrapper}>
           <label htmlFor="favorite">
-            <Htag tag="h2">Добавить в любимые</Htag>
+            <Htag
+              color={titleColor === "black" ? titleColor : "white"}
+              tag="h2"
+            >
+              В любимые
+            </Htag>
           </label>
           <div className={styles.input}>
             <Input
@@ -151,7 +171,12 @@ export const Form = ({ action }: FormProps) => {
         </div>
         <div className={styles.inputWrapper}>
           <label htmlFor="fileCover">
-            <Htag tag="h2">Обложка</Htag>
+            <Htag
+              color={titleColor === "black" ? titleColor : "white"}
+              tag="h2"
+            >
+              Обложка
+            </Htag>
           </label>
           <div className={styles.input}>
             <Input
@@ -167,7 +192,12 @@ export const Form = ({ action }: FormProps) => {
         </div>
         <div className={styles.inputWrapper}>
           <label htmlFor="fileName">
-            <Htag tag="h2">Название файла</Htag>
+            <Htag
+              color={titleColor === "black" ? titleColor : "white"}
+              tag="h2"
+            >
+              Название файла
+            </Htag>
           </label>
           <div className={styles.input}>
             <Input
@@ -183,7 +213,12 @@ export const Form = ({ action }: FormProps) => {
         </div>
         <div className={styles.inputWrapper}>
           <label htmlFor="fileBook">
-            <Htag tag="h2">Загрузить книгу</Htag>
+            <Htag
+              color={titleColor === "black" ? titleColor : "white"}
+              tag="h2"
+            >
+              Загрузить книгу
+            </Htag>
           </label>
           <div className={styles.input}>
             <Input
@@ -195,13 +230,14 @@ export const Form = ({ action }: FormProps) => {
             />
           </div>
         </div>
-        <div
+        <Button
+          className={styles.sendButton}
           onClick={
             action === "publicate" ? () => publicateBook() : () => updateBook()
           }
         >
           Загрузить книгу
-        </div>
+        </Button>
       </div>
     </form>
   );
