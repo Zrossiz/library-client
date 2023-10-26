@@ -13,7 +13,7 @@ interface BookProps extends Record<string, unknown> {
 }
 
 const Book = ({ book }: BookProps) => {
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
 
   const router = useRouter();
   const { id } = router.query;
