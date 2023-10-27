@@ -2,6 +2,8 @@ import styles from "./BookItemDesc.module.css";
 import { Htag, Span } from "@/elements";
 import React from "react";
 import { BookItemDescProps } from "@/components/BookItemDesc/BookItemDesc.props";
+import { API } from "@/helpers/api";
+import axios from "axios";
 
 export const BookItemDesc = ({ book, id }: BookItemDescProps) => {
   return (

@@ -2,9 +2,9 @@ import React from "react";
 import { HeaderProps } from "./Header.props";
 import cn from "classnames";
 import styles from "./Header.module.css";
-import Link from "next/link";
-import { Button, LinkItem } from "@/elements";
+import { Button } from "@/elements";
 import { Nav } from "@/components";
+import Link from "next/link";
 
 export const Header = ({ className }: HeaderProps) => {
   return (
@@ -37,9 +37,9 @@ export const Header = ({ className }: HeaderProps) => {
         <div className={styles.navWrapper}>
           <Nav />
         </div>
-        <div>
+        <Link href="/registration">
           <Button>Войти</Button>
-        </div>
+        </Link>
       </div>
     </header>
   );

@@ -149,27 +149,6 @@ export const Form = ({ action, titleColor }: FormProps) => {
           </div>
         </div>
         <div className={styles.inputWrapper}>
-          <label htmlFor="favorite">
-            <Htag
-              color={titleColor === "black" ? titleColor : "white"}
-              tag="h2"
-            >
-              В любимые
-            </Htag>
-          </label>
-          <div className={styles.input}>
-            <Input
-              placeholder="Добавить в любимые?"
-              id="favorite"
-              type="text"
-              value={favorite}
-              {...register("favorite", {
-                onChange: (e) => setFavorite(e.target.value),
-              })}
-            />
-          </div>
-        </div>
-        <div className={styles.inputWrapper}>
           <label htmlFor="fileCover">
             <Htag
               color={titleColor === "black" ? titleColor : "white"}
