@@ -6,6 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import { IBook } from "@/interfaces/book.interface";
 import { CardItem } from "@/components";
+import styles from "../../styles/BookSearch.module.css";
 
 function Search() {
   const [title, setTitle] = useState<string>("");
@@ -44,18 +45,27 @@ function Search() {
   }, []);
 
   return (
-    <div>
-      <Htag tag="h1">Поиск книг</Htag>
+    <div className={styles.searchPageWrapper}>
+      <Htag className={styles.searchTitle} tag="h1">
+        Введите название книги
+      </Htag>
       <Input
+        placeholder="Введите название книги"
         type="text"
         value={title}
         required={true}
         onChange={(e) => setTitle(e.target.value)}
         name="title"
+        className={styles.searchInput}
       />
-      <div onClick={() => setSearchBooks(true)}>Искать</div>
+      <Button
+        className={styles.searchButton}
+        onClick={() => setSearchBooks(true)}
+      >
+        Поиск
+      </Button>
       <div>
-        <ul>
+        <ul className={styles.searchResultsWrapper}>
           {books.length > 0 &&
             books.map((item, index) => (
               <CardItem

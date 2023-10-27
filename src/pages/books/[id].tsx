@@ -24,12 +24,6 @@ const Book = ({ book }: BookProps) => {
     console.log(true);
   };
 
-  const downloadBook = async () => {
-    await axios.get(`${API.mainPage.getBooks}/${id}/download`).then(() => {
-      console.log(true);
-    });
-  };
-
   return (
     <div className={styles.bookPageWrapper}>
       <div className={styles.mainWrapper}>

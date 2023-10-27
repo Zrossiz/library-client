@@ -1,0 +1,17 @@
+.searchPageWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchInput {
+    margin-top: 20px;
+}
+
+.searchButton {
+    margin-top: 20px;
+    width: 300px;
+}
+
+.searchResultsWrapper {
+    columns: auto 18em;
+}
