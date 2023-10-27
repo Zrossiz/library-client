@@ -10,5 +10,5 @@ export interface InputProps
   name?: string;
   id?: string;
   placeholder?: string;
-  type: "file" | "text";
+  type: "file" | "text" | "password";
 }

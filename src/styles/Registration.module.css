@@ -1,0 +1,41 @@
+.registrationPageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.registrationWrapper form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.input {
+    margin-top: 10px;
+}
+
+.registrationButton {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.titlesWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formWrapper {
+    padding: 20px 60px;
+    border-radius: 30px;
+    border: 1px solid #000;
+    background: rgba(124, 120, 17, 0.3);
+    backdrop-filter: blur(6.5px);
+}
+
+.loginWrapper {
+    text-align: center;
+}

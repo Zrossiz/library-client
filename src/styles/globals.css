@@ -7,6 +7,7 @@
     --yellow: #A66400;
 }
 
+
 ::-webkit-scrollbar {
     width: 4px;
 }
@@ -19,6 +20,14 @@
 ::-webkit-scrollbar-thumb {
     background: var(--white);
     border-radius: 5px;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+
+:-ms-input-placeholder {
+    text-align: center;
 }
 
 *::selection {
@@ -35,8 +44,8 @@ html {
 }
 
 body {
-    background: rgb(51,27,11);
-    background: radial-gradient(circle, rgba(51,27,11,1) 0%, rgba(122,96,78,1) 100%);
+    background: rgb(51, 27, 11);
+    background: radial-gradient(circle, rgba(51, 27, 11, 1) 0%, rgba(122, 96, 78, 1) 100%);
     color: var(--white);
     margin: 0;
     padding: 0;
@@ -51,7 +60,9 @@ input:focus {
     cursor: text;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin: 0;
 }
 
