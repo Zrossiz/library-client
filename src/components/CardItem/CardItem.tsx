@@ -15,7 +15,9 @@ export const CardItem = ({
 }: CardItemProps) => {
   const switchFavorite = () => {
     if (!localStorage.getItem("login")) {
-      return false;
+      return alert(
+        "Для добавления в избранные - нужно значала пройти регистрацию."
+      );
     }
 
     axios
