@@ -4,6 +4,8 @@ import { Htag } from "@/elements";
 import Link from "next/link";
 import { CardItemProps } from "@/components/CardItem/CardItem.props";
 import cn from "classnames";
+import { API } from "@/helpers/api";
+import axios from "axios";
 
 export const CardItem = ({
   id,
@@ -11,6 +13,19 @@ export const CardItem = ({
   fileCover,
   className,
 }: CardItemProps) => {
+  const switchFavorite = () => {
+    if (!localStorage.getItem("login")) {
+      return false;
+    }
+
+    axios
+      .put(API.auth.switchFavorite, {
+        login: localStorage.getItem("login"),
+        bookId: id,
+      })
+      .then(() => console.log(true));
+  };
+
   return (
     <li className={cn(styles.itemWrapper, className)}>
       <div className={styles.imgWrapper}>
@@ -65,10 +80,10 @@ export const CardItem = ({
         </Htag>
       </div>
       <div className={styles.linksWrapper}>
-        <Link
-          href={"/"}
+        <div
           title="Добавить в избранные"
           className={styles.favorite}
+          onClick={() => switchFavorite()}
         >
           <svg
             width="50"
@@ -84,7 +99,7 @@ export const CardItem = ({
               fill="#884d00"
             />
           </svg>
-        </Link>
+        </div>
         <div className={styles.readWrapper}>
           <Link className={styles.read} href={`/books/${id}`}>
             Читать

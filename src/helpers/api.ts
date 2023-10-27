@@ -5,5 +5,6 @@ export const API = {
   auth: {
     registration: process.env.NEXT_PUBLIC_DOMAIN + "/api/user/registration",
     login: process.env.NEXT_PUBLIC_DOMAIN + "/api/user/login",
+    switchFavorite: process.env.NEXT_PUBLIC_DOMAIN + "/api/user/favorite",
   },
 };
