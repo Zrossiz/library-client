@@ -1,0 +1,23 @@
+.errorWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 60px;
+    border-radius: 30px;
+    border: 1px solid #000;
+    background: rgba(124, 120, 17, 0.3);
+    backdrop-filter: blur(6.5px);
+}
+
+.homeButtonWrapper {
+    margin-top: 20px;
+}

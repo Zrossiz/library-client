@@ -1,8 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { IBook } from "@/interfaces/book.interface";
 
 export interface CardItemProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  id: string;
-  title: string;
-  fileCover?: string;
+  book: IBook;
 }

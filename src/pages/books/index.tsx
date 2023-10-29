@@ -1,30 +1,34 @@
 import { IBook } from "@/interfaces/book.interface";
 import { withLayout } from "@/layout/Layout";
-import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { API } from "@/helpers/api";
 import { CardItem } from "@/components";
 import styles from "../../styles/BooksIndex.module.css";
-import cn from "classnames";
 
 interface HomeProps extends Record<string, unknown> {
   books: IBook[];
 }
 
 const Books = ({ books }: HomeProps) => {
+  const getFavorites = async () => {
+    localStorage.setItem("login", "admin");
+    const login = localStorage.getItem("login");
+    if (localStorage.getItem("login")) {
+      await axios
+        .get(API.auth.switchFavorite, { login: localStorage.getItem("login") })
+        .then((res) => {
+          console.log(res.data);
+        });
+    }
+  };
+
   return (
     <>
+      <div onClick={() => getFavorites()}>test</div>
       <ul className={styles.listWrapper}>
         {books.map((item, index) => {
-          return (
-            <CardItem
-              key={item._id}
-              id={item._id}
-              title={item.title}
-              fileCover={item.fileCover}
-            />
-          );
+          return <CardItem key={item._id} {...item} />;
         })}
       </ul>
     </>

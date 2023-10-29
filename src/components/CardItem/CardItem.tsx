@@ -6,26 +6,50 @@ import { CardItemProps } from "@/components/CardItem/CardItem.props";
 import cn from "classnames";
 import { API } from "@/helpers/api";
 import axios from "axios";
+import { IBook } from "@/interfaces/book.interface";
 
 export const CardItem = ({
-  id,
+  _id,
   title,
   fileCover,
+  description,
+  authors,
+  favorite,
+  fileName,
+  viewCount,
+  createdAt,
+  updatedAt,
+  __v,
   className,
 }: CardItemProps) => {
-  const switchFavorite = () => {
+  console.log(_id);
+  const switchFavorite = async () => {
     if (!localStorage.getItem("login")) {
       return alert(
         "Для добавления в избранные - нужно cначала пройти регистрацию."
       );
     }
 
-    axios
+    const book: IBook = {
+      _id,
+      title,
+      description,
+      authors,
+      favorite,
+      fileCover,
+      fileName,
+      viewCount,
+      createdAt,
+      updatedAt,
+      __v,
+    };
+
+    await axios
       .put(API.auth.switchFavorite, {
         login: localStorage.getItem("login"),
-        bookId: id,
+        book,
       })
-      .then(() => console.log(true));
+      .then((res) => console.log(res.data, book));
   };
 
   return (
@@ -103,7 +127,7 @@ export const CardItem = ({
           </svg>
         </div>
         <div className={styles.readWrapper}>
-          <Link className={styles.read} href={`/books/${id}`}>
+          <Link className={styles.read} href={`/books/${_id}`}>
             Читать
           </Link>
         </div>
