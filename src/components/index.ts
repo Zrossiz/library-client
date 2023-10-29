@@ -5,3 +5,4 @@ export * from "./ToTop/ToTop";
 export * from "./CardItem/CardItem";
 export * from "./BookItemDesc/BookItemDesc";
 export * from "./UpdateBookPopUp/UpdateBookPopUp";
+export * from "./NavMobile/NavMobile";

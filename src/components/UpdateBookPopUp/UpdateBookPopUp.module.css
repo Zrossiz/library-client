@@ -27,9 +27,4 @@
     cursor: pointer;
     top: 10px;
     right: 10px;
-    transition: 0.6s;
-}
-
-.closePopUp:hover {
-    transform: rotate(90deg);
 }

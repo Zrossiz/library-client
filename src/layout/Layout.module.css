@@ -9,3 +9,9 @@
 .main {
     flex: auto;
 }
+
+@media (max-width: 420px) {
+    .wrapper {
+        width: 96%;
+    }
+}

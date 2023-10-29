@@ -15,10 +15,6 @@
     height: 72vh;
 }
 
-.secondScreen {
-    height: 90vh;
-}
-
 .titleH1 {
     margin-top: 13%;
     padding: 20px 0;
@@ -49,4 +45,19 @@
     margin-top: 60px;
     display: flex;
     justify-content: center;
+}
+
+@media (max-width: 900px) {
+
+    .firstScreen {
+        height: 84vh;
+    }
+
+}
+
+@media (max-width: 420px) {
+    .firstScreen {
+        height: 90vh;
+    }
+
 }

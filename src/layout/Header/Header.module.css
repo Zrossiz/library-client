@@ -23,3 +23,32 @@
 .navWrapper {
     display: flex;
 }
+
+.burgerWrapper {
+    display: none;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.burgerWrapper:hover {
+    transform: skew(20deg);
+}
+
+@media (max-width: 800px) {
+
+    .header {
+        display: flex;
+        justify-content: flex-end;
+        background-color: transparent;
+        backdrop-filter: none;
+        border: none;
+    }
+
+    .headerWrapper {
+        display: none;
+    }
+
+    .burgerWrapper {
+        display: block;
+    }
+}
