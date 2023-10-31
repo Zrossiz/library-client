@@ -67,13 +67,7 @@ function Search() {
       <div>
         <ul className={styles.searchResultsWrapper}>
           {books.length > 0 &&
-            books.map((item, index) => (
-              <CardItem
-                id={item._id}
-                title={item.title}
-                fileCover={item.fileCover}
-              />
-            ))}
+            books.map((item, index) => <CardItem bookProps={item} />)}
         </ul>
       </div>
     </div>

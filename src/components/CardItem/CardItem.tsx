@@ -8,27 +8,27 @@ import { API } from "@/helpers/api";
 import axios from "axios";
 import { IBook } from "@/interfaces/book.interface";
 
-export const CardItem = ({
-  _id,
-  title,
-  fileCover,
-  description,
-  authors,
-  favorite,
-  fileName,
-  viewCount,
-  createdAt,
-  updatedAt,
-  __v,
-  className,
-}: CardItemProps) => {
-  console.log(_id);
+export const CardItem = ({ bookProps, className }: CardItemProps) => {
   const switchFavorite = async () => {
     if (!localStorage.getItem("login")) {
       return alert(
         "Для добавления в избранные - нужно cначала пройти регистрацию."
       );
     }
+
+    const {
+      _id,
+      title,
+      description,
+      authors,
+      favorite,
+      fileCover,
+      fileName,
+      viewCount,
+      createdAt,
+      updatedAt,
+      __v,
+    } = bookProps;
 
     const book: IBook = {
       _id,
@@ -55,10 +55,10 @@ export const CardItem = ({
   return (
     <li className={cn(styles.itemWrapper, className)}>
       <div className={styles.imgWrapper}>
-        {fileCover != "undefined" ? (
+        {bookProps.fileCover != "undefined" ? (
           <img
             className={styles.imgPreview}
-            src={fileCover}
+            src={bookProps.fileCover}
             alt="Превью книги"
           />
         ) : (
@@ -102,7 +102,7 @@ export const CardItem = ({
       </div>
       <div className={styles.titleWrapper}>
         <Htag tag="h3" color="black">
-          {title}
+          {bookProps.title}
         </Htag>
       </div>
       <div className={styles.linksWrapper}>
@@ -127,7 +127,7 @@ export const CardItem = ({
           </svg>
         </div>
         <div className={styles.readWrapper}>
-          <Link className={styles.read} href={`/books/${_id}`}>
+          <Link className={styles.read} href={`/books/${bookProps._id}`}>
             Читать
           </Link>
         </div>

@@ -34,14 +34,24 @@
     transform: skew(20deg);
 }
 
+.mobileNavWrapper {
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+}
+
 @media (max-width: 800px) {
+
+    .mobileNavWrapper {
+        display: flex;
+    }
 
     .header {
         display: flex;
-        justify-content: flex-end;
         background-color: transparent;
         backdrop-filter: none;
         border: none;
+        padding: 0;
     }
 
     .headerWrapper {

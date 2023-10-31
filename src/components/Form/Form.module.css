@@ -11,7 +11,7 @@
 }
 
 .sendButton {
-    margin-top: auto;
+    margin-top: 20px;
 }
 
 .formWrapper {
@@ -19,4 +19,3 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-

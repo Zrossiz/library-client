@@ -14,21 +14,20 @@ const Books = ({ books }: HomeProps) => {
   const getFavorites = async () => {
     localStorage.setItem("login", "admin");
     const login = localStorage.getItem("login");
-    if (localStorage.getItem("login")) {
+    /*     if (localStorage.getItem("login")) {
       await axios
         .get(API.auth.switchFavorite, { login: localStorage.getItem("login") })
         .then((res) => {
           console.log(res.data);
         });
-    }
+    } */
   };
 
   return (
     <>
-      <div onClick={() => getFavorites()}>test</div>
       <ul className={styles.listWrapper}>
         {books.map((item, index) => {
-          return <CardItem key={item._id} {...item} />;
+          return <CardItem key={item._id} bookProps={item} />;
         })}
       </ul>
     </>

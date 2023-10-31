@@ -40,6 +40,7 @@
     cursor: pointer;
     position: relative;
     margin-left: auto;
+    width: fit-content;
 }
 
 .closeButtonIcon {
