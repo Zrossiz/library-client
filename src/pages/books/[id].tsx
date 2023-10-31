@@ -7,6 +7,7 @@ import { BookItemDesc, Form, UpdateBookPopUp } from "@/components";
 import { useRouter } from "next/router";
 import { Button } from "@/elements";
 import styles from "../../styles/BookId.module.css";
+import { useScrollY } from "@/hooks/useScrollY";
 
 interface BookProps extends Record<string, unknown> {
   book: IBook;
@@ -22,6 +23,15 @@ const Book = ({ book }: BookProps) => {
     await axios.delete(`${API.mainPage.getBooks}/${id}`);
     router.push("/books");
     console.log(true);
+  };
+
+  const updateBook = () => {
+    setOpen(true);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -73,16 +83,16 @@ const Book = ({ book }: BookProps) => {
           <BookItemDesc id={id} book={book} />
           <div className={styles.buttonsWrapper}>
             <Button onClick={() => removeBook()}>Удалить</Button>
-            <Button onClick={() => setOpen(!open)}>Обновить</Button>
+            <Button
+              className={styles.updateButton}
+              onClick={() => updateBook()}
+            >
+              Обновить
+            </Button>
           </div>
         </div>
       </div>
-      {open && (
-        <UpdateBookPopUp setOpen={setOpen} />
-        // <div>
-        //   <Form action="update" />
-        // </div>
-      )}
+      {open && <UpdateBookPopUp setOpen={setOpen} />}
     </div>
   );
 };

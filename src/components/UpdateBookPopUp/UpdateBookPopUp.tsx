@@ -23,7 +23,7 @@ export const UpdateBookPopUp = ({ setOpen }: UpdateBookPopUpProps) => {
             />
           </svg>
         </div>
-        <Htag color="black" tag="h2">
+        <Htag className={styles.titleOfUpdate} color="black" tag="h2">
           Редактирование книги
         </Htag>
         <div>

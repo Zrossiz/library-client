@@ -18,3 +18,25 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media(max-width: 800px) {
+    .mainWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .descWrapper {
+        margin-top: 20px;
+        width: 90%;
+    }
+}
+
+@media(max-width: 400px) {
+    .buttonsWrapper {
+        flex-direction: column;
+    }
+
+    .updateButton {
+        margin-top: 20px;
+    }
+}

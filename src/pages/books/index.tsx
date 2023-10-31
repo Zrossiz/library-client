@@ -5,6 +5,7 @@ import axios from "axios";
 import { API } from "@/helpers/api";
 import { CardItem } from "@/components";
 import styles from "../../styles/BooksIndex.module.css";
+import { Htag } from "@/elements";
 
 interface HomeProps extends Record<string, unknown> {
   books: IBook[];
@@ -25,6 +26,7 @@ const Books = ({ books }: HomeProps) => {
 
   return (
     <>
+      <Htag tag="h1">Все книги</Htag>
       <ul className={styles.listWrapper}>
         {books.map((item, index) => {
           return <CardItem key={item._id} bookProps={item} />;

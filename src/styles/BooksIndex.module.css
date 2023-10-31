@@ -1,3 +1,12 @@
 .listWrapper {
     columns: auto 18em;
 }
+
+@media(max-width: 800px) {
+
+    .listWrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}

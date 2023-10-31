@@ -15,3 +15,11 @@
 .searchResultsWrapper {
     columns: auto 18em;
 }
+
+@media(max-width: 800px) {
+    .searchResultsWrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}

@@ -15,7 +15,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 900px;
     border-radius: 16px;
     background-color: var(--white);
     padding: 40px 20px;
@@ -27,4 +26,16 @@
     cursor: pointer;
     top: 10px;
     right: 10px;
+}
+
+@media(max-width: 800px) {
+    .wrapper {
+        position: absolute;
+        background-color: transparent;
+        top: 80px;
+    }
+
+    .titleOfUpdate {
+        margin-top: 20px;
+    }
 }
