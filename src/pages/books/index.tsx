@@ -36,7 +36,7 @@ const Books = ({ books }: HomeProps) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const { data: books } = await axios.get<HomeProps>(API.mainPage.getBooks);
 
   if (!books) {
@@ -45,7 +45,6 @@ export const getStaticProps = async () => {
 
   return {
     props: { books },
-    revalidate: 30,
   };
 };
 

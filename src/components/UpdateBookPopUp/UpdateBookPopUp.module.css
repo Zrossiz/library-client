@@ -19,6 +19,7 @@
     background-color: var(--white);
     padding: 40px 20px;
     position: relative;
+    width: 900px;
 }
 
 .closePopUp {
@@ -33,6 +34,10 @@
         position: absolute;
         background-color: transparent;
         top: 80px;
+    }
+
+    .popUpWrapper {
+        width: fit-content;
     }
 
     .titleOfUpdate {

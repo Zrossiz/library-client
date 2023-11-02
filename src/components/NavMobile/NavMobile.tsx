@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Nav } from "..";
 import styles from "./NavMobile.module.css";
 import { NavMobileProps } from "@/components/NavMobile/NavMobile.props";
 
